@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="60e42987-4d2c-4455-a254-97257c2314d6" name="Application" responsible="Бегунов А.В." version="1.00">
+
+  <description>CDN ресурсы модуля Application</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+</ui_module>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="b649f2bb-dd50-48bf-a078-39c00761e941" name="Controls-theme" responsible="Бегунов А.В." version="1.00">
+
+  <description>CDN ресурсы модуля Controls-theme</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+</ui_module>
