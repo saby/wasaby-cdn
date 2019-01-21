@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="32b9aeb2-e3bd-415b-a372-bac8ae69178b" name="Controls-theme-IE" responsible="Бегунов А.В." version="1.00">
+
+  <description>CDN ресурсы модуля Controls-theme для IE</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+</ui_module>
