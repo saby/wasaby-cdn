@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ui_module id="70fd296c-ed07-4fe5-9393-f8fdc9fc7df3" name="Charts" responsible="Бегунов А.В." version="1.00">
+<ui_module for_cdn="1" id="70fd296c-ed07-4fe5-9393-f8fdc9fc7df3" name="Charts" responsible="Бегунов А.В." version="1.00">
 
   <description>CDN ресурсы модуля Charts</description>
 

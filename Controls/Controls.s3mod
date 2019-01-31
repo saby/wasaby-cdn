@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ui_module id="3255ad33-c963-4899-abe5-4e35e00a18be" name="Controls" responsible="Бегунов А.В." version="1.00">
+<ui_module for_cdn="1" id="3255ad33-c963-4899-abe5-4e35e00a18be" name="Controls" responsible="Бегунов А.В." version="1.00">
 
   <description>CDN ресурсы модуля Controls</description>
 
