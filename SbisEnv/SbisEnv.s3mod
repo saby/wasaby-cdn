@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module for_cdn="1" id="e214c78c-f2f9-46b5-8abf-7556cd524b85" name="SbisEnv" responsible="Заляев А.В." version="1.00">
+
+  <description>CDN ресурсы модуля SbisEnv</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+</ui_module>
