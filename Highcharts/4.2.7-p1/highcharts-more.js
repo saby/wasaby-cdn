@@ -5,7 +5,7 @@
 
  License: www.highcharts.com/license
 */
-define(['browser!cdn!/highcharts/4.2.7/highcharts.js'], function() {
+define(['browser!cdn!/Highcharts/4.2.7-p1/highcharts.js'], function() {
 (function(m){typeof module==="object"&&module.exports?module.exports=m:m(Highcharts)})(function(m){function M(a,b,c){this.init(a,b,c)}var R=m.arrayMin,S=m.arrayMax,s=m.each,J=m.extend,G=m.isNumber,v=m.merge,T=m.map,r=m.pick,B=m.pInt,H=m.correctFloat,p=m.getOptions().plotOptions,i=m.seriesTypes,t=m.extendClass,N=m.splat,w=m.wrap,O=m.Axis,z=m.Tick,I=m.Point,U=m.Pointer,V=m.CenteredSeriesMixin,C=m.TrackerMixin,x=m.Series,y=Math,F=y.round,D=y.floor,P=y.max,W=m.Color,n=function(){};J(M.prototype,{init:function(a,
 b,c){var d=this,g=d.defaultOptions;d.chart=b;d.options=a=v(g,b.angular?{background:{}}:void 0,a);(a=a.background)&&s([].concat(N(a)).reverse(),function(a){var b=a.backgroundColor,g=c.userOptions,a=v(d.defaultBackgroundOptions,a);if(b)a.backgroundColor=b;a.color=a.backgroundColor;c.options.plotBands.unshift(a);g.plotBands=g.plotBands||[];g.plotBands!==c.options.plotBands&&g.plotBands.unshift(a)})},defaultOptions:{center:["50%","50%"],size:"85%",startAngle:0},defaultBackgroundOptions:{shape:"circle",
 borderWidth:1,borderColor:"silver",backgroundColor:{linearGradient:{x1:0,y1:0,x2:0,y2:1},stops:[[0,"#FFF"],[1,"#DDD"]]},from:-Number.MAX_VALUE,innerRadius:0,to:Number.MAX_VALUE,outerRadius:"105%"}});var A=O.prototype,z=z.prototype,X={getOffset:n,redraw:function(){this.isDirty=!1},render:function(){this.isDirty=!1},setScale:n,setCategories:n,setTitle:n},Q={isRadial:!0,defaultRadialGaugeOptions:{labels:{align:"center",x:0,y:null},minorGridLineWidth:0,minorTickInterval:"auto",minorTickLength:10,minorTickPosition:"inside",
