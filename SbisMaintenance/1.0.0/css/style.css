@@ -76,3 +76,13 @@
 .SbisEnv-ParkingPage .SbisEnv-ParkingContent .SbisEnv-ParkingBody__action {
   margin-top: 32px;
 }
+.SbisEnv-ParkingPage .SbisEnv-ParkingContent .SbisEnv-ParkingBody__action a {
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: #0055BB;
+}
+.SbisEnv-ParkingPage .SbisEnv-ParkingContent .SbisEnv-ParkingBody__action a:hover {
+  text-decoration: underline;
+  color: #313E78;
+}
