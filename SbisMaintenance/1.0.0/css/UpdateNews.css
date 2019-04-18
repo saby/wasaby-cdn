@@ -9,7 +9,6 @@
   right: 0;
   left: 0;
   top: 0;
-  /* smartphones, touchscreens */
 }
 .UpdateNews .UpdateNews__noselect {
   -webkit-user-select: none;
@@ -79,7 +78,14 @@
   min-height: 12px;
 }
 @media (hover: none) and (pointer: coarse) {
-  .UpdateNews .UpdateNews__layout {
-    height: auto;
+  .UpdateNews .UpdateNews__content__scroll #content::-webkit-scrollbar {
+    width: auto;
+  }
+  .UpdateNews .UpdateNews__content__scroll #content {
+    margin-right: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .UpdateNews .UpdateNews__content__scroll #scrollbar {
+    display: none;
   }
 }
