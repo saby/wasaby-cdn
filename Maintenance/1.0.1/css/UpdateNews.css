@@ -59,12 +59,12 @@
 }
 .UpdateNews .UpdateNews__layout .UpdateNews__content .UpdateNews__content__scroll {
   font-size: 15px;
-  padding: 12px;
   color: #666;
   overflow-x: hidden;
 }
 .UpdateNews .UpdateNews__layout .UpdateNews__content .UpdateNews__content__scroll .UpdateNews__content__scroll__text {
   width: 570px;
+  margin: 12px;
 }
 .UpdateNews .UpdateNews__layout .UpdateNews__content .UpdateNews__content__scroll .UpdateNews__content__scroll__text ul {
   margin-left: 20px;
