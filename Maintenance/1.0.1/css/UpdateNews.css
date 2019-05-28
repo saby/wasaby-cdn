@@ -73,6 +73,16 @@
   font-size: 16px;
   color: #333;
 }
-.UpdateNews .UpdateNews__layout .UpdateNews__content .UpdateNews__content__footer {
-  min-height: 12px;
+
+@media (hover: none) and (pointer: coarse) {
+  .UpdateNews .UpdateNews__content__scroll #content::-webkit-scrollbar {
+    width: auto;
+  }
+  .UpdateNews .UpdateNews__content__scroll #content {
+    margin-right: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .UpdateNews .UpdateNews__content__scroll #scrollbar {
+    display: none;
+  }
 }

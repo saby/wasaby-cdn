@@ -1,6 +1,13 @@
 /*
    Templates
  */
+.SbisEnv-ParkingPage {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
 .SbisEnv-ParkingPage__header {
   font-size: 18px;
   color: #999;
@@ -96,4 +103,7 @@
 .SbisEnv-ParkingBody__action a:hover {
   text-decoration: underline;
   color: #313E78;
+}
+.SbisEnv-ParkingBody__footer {
+  min-height: 12px;
 }
