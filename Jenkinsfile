@@ -7,8 +7,7 @@ def workspace = "/home/sbis/workspace/wasaby_cdn_${version}/${BRANCH_NAME}"
     ws (workspace){
         deleteDir()
         checkout([$class: 'GitSCM',
-            // branches: [[name: "rc-${version}"]],
-            branches: [[name: "19.400/feature/tests-cdn"]],
+            branches: [[name: "rc-${version}"]],
             doGenerateSubmoduleConfigurations: false,
             extensions: [[
                 $class: 'RelativeTargetDirectory',
