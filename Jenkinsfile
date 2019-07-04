@@ -2,7 +2,7 @@ import java.time.*
 import java.lang.Math
 
 node ('controls') {
-def version = "19.400"
+def version = "19.600"
 def workspace = "/home/sbis/workspace/wasaby_cdn_${version}/${BRANCH_NAME}"
     ws (workspace){
         deleteDir()
