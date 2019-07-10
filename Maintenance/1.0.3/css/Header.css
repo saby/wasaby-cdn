@@ -36,6 +36,7 @@
    box-sizing     : border-box;
    position       : relative;
    min-width      : 1024px;
+   width          : 1024px;
    max-width      : 1024px;
    padding        : 13px 16px 0;
 }
