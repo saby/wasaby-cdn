@@ -6,12 +6,24 @@ var OS = (function () {
    OS.detect = function (userAgent_) {
       var userAgent = userAgent_.replace('_', '.'); // в некоторых значениях user agent версия записывается 10_10_6 вместо 10.10.6
       /** Попытка однозначно определить название ОС */
-      var os_name = Object.keys(OS.list).find(function (name) { return OS.list[name].reg.test(userAgent); });
+      var os_name;
+      for (var name in OS.list) {
+         if (!OS.list.hasOwnProperty(name)) { continue; }
+         if (OS.list[name].reg.test(userAgent)) {
+            os_name = name;
+         }
+      };
       if (os_name) {
          return OS.list[os_name];
       }
       /** Если определить название ОС не удалось, определяем семейство ОС и версию */
-      var family_name = Object.keys(OS.families).find(function (name) { return OS.families[name].reg.test(userAgent); });
+      var family_name;
+      for (var name in OS.families) {
+         if (!OS.families.hasOwnProperty(name)) { continue; }
+         if (OS.families[name].reg.test(userAgent)) {
+            family_name = name;
+         }
+      };
       if (!family_name) {
          throw new Error("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0438\u0442\u044C \u041E\u0421 \u0434\u043B\u044F \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u044F UserAgent " + userAgent + " :: " + typeof userAgent);
       }
@@ -57,7 +69,7 @@ var OS = (function () {
          reg: /(Mac OS X|MacPPC|MacIntel|Mac_PowerPC|Macintosh)/i,
          version: /Mac OS X ([0-9]{1,}[\.0-9]{0,})/i,
          available: 10.13
-      },
+      }
    };
    OS.list = {
       //region Windows
@@ -129,36 +141,36 @@ var OS = (function () {
          reg: /(Windows 98|Win98)/,
          version: 4.5,
          family: OS.families.Windows,
-         isAvailable: false,
+         isAvailable: false
       },
       Windows95: {
          name: 'Windows 95',
          reg: /(Windows 95|Win95|Windows_95)/,
          version: 4.2,
          family: OS.families.Windows,
-         isAvailable: false,
+         isAvailable: false
       },
       WindowsNT4_0: {
          name: 'Windows NT 4.0',
          reg: /(Windows NT 4.0|WinNT4.0)/,
          version: 4.0,
          family: OS.families.Windows,
-         isAvailable: false,
+         isAvailable: false
       },
       WindowsCE: {
          name: 'Windows CE',
          reg: /Windows CE/,
          version: 3.5,
          family: OS.families.Windows,
-         isAvailable: false,
+         isAvailable: false
       },
       Windows3_11: {
          name: 'Windows 3.11',
          reg: /Win16/,
          version: 3.11,
          family: OS.families.Windows,
-         isAvailable: false,
-      },
+         isAvailable: false
+      }
    };
    return OS;
 }());
@@ -169,18 +181,35 @@ var Browser = (function () {
    }
    Browser.detect = function (userAgent_) {
       var userAgent = userAgent_.replace('_', '.'); // в некоторых значениях user agent версия записывается 10_10_6 вместо 10.10.6
-      var familyName = Object.keys(Browser.families).find(function (name) { return Browser.families[name].reg.test(userAgent); });
-      if (!familyName) {
+      var browser_name;
+      for (var name in Browser.list) {
+         if (!Browser.list.hasOwnProperty(name)) { continue; }
+         if (Browser.list[name].reg.test(userAgent)) {
+            browser_name = name;
+         }
+      };
+      if (browser_name) {
+         return Browser.list[browser_name];
+      }
+
+      var family_name;
+      for (var name in Browser.families) {
+         if (!Browser.families.hasOwnProperty(name)) { continue; }
+         if (Browser.families[name].reg.test(userAgent)) {
+            family_name = name;
+         }
+      };
+      if (!family_name) {
          throw new Error("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0438\u0442\u044C \u0431\u0440\u0430\u0443\u0437\u0435\u0440 \u0434\u043B\u044F \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u044F UserAgent " + userAgent + " :: " + typeof userAgent);
       }
-      var family = Browser.families[familyName];
-      var _a = family.version, reg = _a.reg, defaultVersion = _a.default;
-      var version = parseFloat((reg.exec(userAgent) || ["" + defaultVersion]).pop()) || defaultVersion; // при неопредленной версии считаем браузер актуальным
+      var family = Browser.families[family_name];
+      var _a = family.version, reg = _a.reg;
+      var version = parseFloat((reg.exec(userAgent) || [""]).pop()) || null; // при неопредленной версии считаем браузер актуальным
       return {
          isAvailable: version >= family.version.available,
          name: family.name,
          version: version,
-         family: family,
+         family: family
       };
    };
    Browser.families = {
@@ -189,8 +218,7 @@ var Browser = (function () {
          reg: /\bYaBrowser\/(\d+)/i,
          version: {
             reg: /YaBrowser\/([0-9]{1,}[\.0-9]{0,})/i,
-            available: 14.1,
-            default: null
+            available: 14.1
          }
       },
       Firefox: {
@@ -198,8 +226,7 @@ var Browser = (function () {
          reg: /Firefox/i,
          version: {
             reg: /Firefox\/([0-9]{1,}[\.0-9]{0,})/i,
-            available: 26.0,
-            default: null
+            available: 26.0
          }
       },
       OperaChrome: {
@@ -207,8 +234,7 @@ var Browser = (function () {
          reg: /(OPR)/i,
          version: {
             reg: /OPR\/([0-9]{1,}[\.0-9]{0,})/i,
-            available: 18.0,
-            default: null
+            available: 18.0
          }
       },
       Chrome: {
@@ -216,8 +242,7 @@ var Browser = (function () {
          reg: /Chrome/i,
          version: {
             reg: /Chrome\/([0-9]{1,}[\.0-9]{0,})/i,
-            available: 32.0,
-            default: null
+            available: 32.0
          }
       },
       Opera: {
@@ -225,8 +250,7 @@ var Browser = (function () {
          reg: /(Opera)/i,
          version: {
             reg: /Opera\/([0-9]{1,}[\.0-9]{0,})/i,
-            available: 18.0,
-            default: null
+            available: 18.0
          }
       },
       Edge: {
@@ -234,17 +258,15 @@ var Browser = (function () {
          reg: /Edge/i,
          version: {
             reg: /Edge([0-9]{1,}[\.0-9]{0,})/,
-            available: 12,
-            default: null
+            available: 12
          }
       },
       IE: {
          name: 'Internet Explorer',
-         reg: /MSIE/i,
+         reg: /(MSIE|Trident)/i,
          version: {
             reg: /MSIE ([0-9]{1,}[\.0-9]{0,})/,
-            available: 10,
-            default: 11
+            available: 10
          }
       },
       Safari: {
@@ -252,10 +274,19 @@ var Browser = (function () {
          reg: /^((?!chrome|android).)*safari/i,
          version: {
             reg: /(Safari\/)+([\w.]+)/,
-            available: 534.57,
-            default: null
+            available: 534.57
          }
       }
    };
+
+   Browser.list = {
+      IE11: {
+         name: 'IE 11',
+         reg: /Trident\/7.0/,
+         family: Browser.families.IE,
+         version: 11,
+         isAvailable: true
+      }
+   }
    return Browser;
 }());

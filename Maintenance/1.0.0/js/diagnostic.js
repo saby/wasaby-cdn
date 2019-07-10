@@ -216,6 +216,6 @@ function _showTooltip(prefix, caption) {
 
 
 function redirect() {
-   var returnLink = window.location.href.includes(RETURN_LINK_PREFIX) && window.location.href.split(RETURN_LINK_PREFIX).pop() || '';
+   var returnLink = window.location.href.indexOf(RETURN_LINK_PREFIX) !== -1 && window.location.href.split(RETURN_LINK_PREFIX).pop() || '';
    window.location.href = "" + window.location.origin + returnLink;
 }
