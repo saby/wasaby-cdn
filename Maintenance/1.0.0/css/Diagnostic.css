@@ -16,6 +16,7 @@
 }
 
 .Diagnostics__body {
+   text-align     : left;
    width          : 1024px;
    height         : 100%;
    -moz-box-sizing: border-box;
