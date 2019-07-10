@@ -217,9 +217,5 @@ function _showTooltip(prefix, caption) {
 
 function redirect() {
    var returnLink = window.location.href.includes(RETURN_LINK_PREFIX) && window.location.href.split(RETURN_LINK_PREFIX).pop() || '';
-   // window.location.href = "" + window.location.origin + returnLink;
-   // FIXME:
-   setMessage([
-      p(['браузер удовлетворяет требованиям'])
-   ]);
+   window.location.href = "" + window.location.origin + returnLink;
 }
