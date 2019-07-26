@@ -30,12 +30,12 @@
 }
 
 .Diagnostics__image {
-   float : left;
    height: 300px;
    width : 300px;
 }
 
 .Diagnostics__content {
+   float      : right;
    margin-left: 12px;
    width      : 512px;
 }

@@ -59,11 +59,11 @@ var ScrollConatainerInit = (function () {
 
    function startDragging() {
       addClass(thumb, 'controls-VScrollbar__thumb_dragging', 'controls-VScrollbar__thumb_dragging_default');
-      scrollbar.classList.replace('controls-Scroll__scrollbar_hidden', 'controls-VScrollbar_dragging');
+      addClass(removeClass(scrollbar, 'controls-Scroll__scrollbar_hidden'), 'controls-VScrollbar_dragging');
    }
 
    function endDragging() {
-      scrollbar.classList.replace('controls-VScrollbar_dragging', 'controls-Scroll__scrollbar_hidden');
+      addClass(removeClass(scrollbar, 'controls-VScrollbar_dragging'), 'controls-Scroll__scrollbar_hidden');
       removeClass(removeClass(thumb, 'controls-VScrollbar__thumb_dragging'), 'controls-VScrollbar__thumb_dragging_default');
       toggleTopShadow(content.scrollTop > 1);
    }

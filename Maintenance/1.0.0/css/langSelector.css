@@ -3,6 +3,7 @@
    width       : 20px;
    height      : 14px;
    margin-right: 6px;
+   display     : inline-block;
 }
 
 .langSelector-flagItem-ru-RU {
@@ -12,6 +13,7 @@
 .langSelector-flagItem-en-US {
    background-position: 0 -803px;
 }
+
 .langSelector-selectedItem {
    font-weight: bold;
 }
