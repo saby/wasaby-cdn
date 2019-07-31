@@ -32,6 +32,10 @@
       var userOs = OS.detect(userAgent);
       var userBrowser = Browser.detect(userAgent);
       if (userOs.isAvailable && userBrowser.isAvailable) {
+         redirect();
+      }
+
+      function redirect() {
          var RETURN_LINK_PREFIX = 'ret=';
          var returnLink = window.location.href.indexOf(RETURN_LINK_PREFIX) !== -1 ? window.location.href.split(RETURN_LINK_PREFIX).pop() : '';
          window.location.href = window.location.protocol + '//' + window.location.host + returnLink;
