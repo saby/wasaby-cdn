@@ -12,36 +12,34 @@ var DiagnosticInit = (function () {
       'Edge': 'https://www.microsoft.com/ru-ru/windows/microsoft-edge'
    };
 
-   return function () {
-      var userOs = OS.detect(userAgent);
-      var userBrowser = Browser.detect(userAgent);
-      langSelectorInit(displayWarning.bind(null, userOs, userBrowser));
-   }
+   return function (os, browser) {
 
-   function displayWarning(os, browser) {
-      setLogo();
-      setHeader('Диагностика рабочего места');
-      setSubHeader('Браузер не удовлетворяет требованиям');
-      
-      if (!os.isAvailable) {
-         if (os.family === OS.families.IOS || os.family === OS.families.Android) {
-            oldMobileOS(os);
+      langSelectorInit(displayWarning);
+
+      function displayWarning() {
+         setLogo();
+         setHeader('Диагностика рабочего места');
+         setSubHeader('Браузер не удовлетворяет требованиям');
+
+         if (!os.isAvailable) {
+            if (os.family === OS.families.IOS || os.family === OS.families.Android) {
+               oldMobileOS(os);
+               return;
+            }
+            oldOS(os);
             return;
          }
-         oldOS(os);
-         return;
-      }
-      if (os === OS.list.WindowsXP || os === OS.list.WindowsVista) {
-         VistaXP();
-         return;
-      }
-      if (os.family === OS.families.Windows) {
-         oldWindowsBrowser(browser);
-         return;
-      }
-      oldLinuxMacBrowser(browser);
-   };
-
+         if (os === OS.list.WindowsXP || os === OS.list.WindowsVista) {
+            VistaXP();
+            return;
+         }
+         if (os.family === OS.families.Windows) {
+            oldWindowsBrowser(browser);
+            return;
+         }
+         oldLinuxMacBrowser(browser);
+      };
+   }
 
    function oldOS(os) {
       setMessage([
@@ -70,7 +68,7 @@ var DiagnosticInit = (function () {
          $.createButton({
             caption: 'Установить',
             href: BROWSER_DOWNLOAD_LINKS.YaBrowser,
-            onclick: showBottomTooltip.bind(null, ['Запустите мастер установки Yandex Browser и следуйте подсказкам'])
+            onclick: function () { showBottomTooltip(['Запустите мастер установки Yandex Browser и следуйте подсказкам']) }
          })
       ])
    };
@@ -83,7 +81,7 @@ var DiagnosticInit = (function () {
          $.createButton({
             caption: 'Скачать',
             href: BROWSER_DOWNLOAD_LINKS[browser.name],
-            onclick: showBottomTooltip.bind(null, ['Запустите и установите ', browser.name])
+            onclick: function () { showBottomTooltip(['Запустите и установите ', browser.name]) }
          })
       ]);
    }
@@ -102,7 +100,7 @@ var DiagnosticInit = (function () {
 
    function setLogo() {
       var logoEl = document.querySelector('.SbisEnv-ParkingPage__Header-logo');
-      logoEl.setAttribute('src', '/cdn/SabyLogo/1.0.0/' + ($.lang === 'en-US' ? 'saby' : 'sbis_main') + '.svg')
+      logoEl.setAttribute('src', '/cdn/SabyLogo/1.0.0/' + ($.lang === 'en-US' ? 'saby' : 'sbis_main') + '.png')
    }
    /**
     * @param {String} header
@@ -159,7 +157,7 @@ var DiagnosticInit = (function () {
          $.lang = targetLang;
          document.cookie = 'lang=' + targetLang;
          selectLang(targetLang)
-      });
+      }, false);
 
       function selectLang(lang) {
          langItem.innerHTML = lang.split('-').pop();
