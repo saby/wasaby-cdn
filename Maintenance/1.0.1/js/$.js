@@ -53,7 +53,7 @@ var $ = (function () {
     */
    function createLink(options) {
       var sclass = 'controls-BaseButton__text controls-text-link_theme-default controls-Button__text_viewMode-link_theme-default';
-      var wclass = 'controls-BaseButton__wrapper controls-fontsize-m_theme-default controls-Button__wrapper_viewMode-link';
+      var wclass = 'controls-BaseButton__wrapper controls-fontsize-xl_theme-default controls-Button__wrapper_viewMode-link';
       var aclass = 'controls-BaseButton controls-Button_link controls-Button_link_theme-default controls-Button_clickable controls-Button_link_style-secondary_theme-default controls-Button_bg-same_theme-default';
 
       return _createAction(aclass, wclass, sclass, options);
