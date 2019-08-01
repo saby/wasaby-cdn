@@ -45,7 +45,13 @@ var DiagnosticInit = (function () {
       setMessage([
          p(['Ваша операционная система ', os.name, ' версии ', '' + os.version, ' больше не поддерживается.']),
          p(['Пожалуйста, обновите операционную систему.'])
-      ])
+      ]);
+      setAction([
+         $.createLink({
+            caption: 'Технические требования к рабочему месту',
+            href: 'https://sbis.ru/help/start/teh_terms'
+         })
+      ]);
    }
    function oldMobileOS(os) {
       setMessage([
