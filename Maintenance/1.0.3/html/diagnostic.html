@@ -13,17 +13,17 @@
    <link rel="shortcut icon" sizes="64x64" href="/cdn/Maintenance/1.0.0/img/favicon_64.ico" type="image/x-icon" />
    <link rel="shortcut icon" sizes="128x128" href="/cdn/Maintenance/1.0.0/img/favicon_128.ico" type="image/x-icon" />
 
-   <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.1/css/Application.css">
+   <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.2/css/Application.css">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.3/css/style.css">
-   <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.4/css/Header.css">
+   <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.5/css/Header.css">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.0/css/icon.css">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.0/css/popupTemplate.css">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.0/css/Infobox.css">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.2/css/buttons.css">
-   <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.0/css/Scroll.css">
+   <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.1/css/Scroll.css">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.1/css/ScrollContainer.css">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.0/css/langSelector.css">
-   <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.2/css/diagnostic.css">
+   <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.3/css/diagnostic.css">
 
    <script src='/cdn/Maintenance/1.0.1/js/detection.js'></script>
    <script>
@@ -49,7 +49,7 @@
       <div class="SbisEnv-ParkingPage__Header" tabindex="0">
          <div class="SbisEnv-ParkingPage__Header-center ws-flexbox ws-align-items-baseline">
             <a href="/" class="SbisEnv-ParkingPage__Header-leftBlock ws-flexbox ws-align-items-baseline">
-               <img class="SbisEnv-ParkingPage__Header-logo" src="/cdn/SabyLogo/1.0.0/sbis_main.svg">
+               <img class="SbisEnv-ParkingPage__Header-logo" src="/cdn/SabyLogo/1.0.0/sbis_main.png">
             </a>
             <div
                class="SbisEnv-ParkingPage__Header-rightBlock ws-flex-grow-1 ws-flexbox ws-justify-content-end ws-align-items-baseline">
@@ -149,7 +149,7 @@
          <div
             class="ScrollContainer__scrollbar ScrollContainer__content-bar controls-VScrollbar controls-Scroll__scrollbar controls-Scroll__scrollbar_hidden">
             <div class="controls-VScrollbar__thumb controls-VScrollbar__thumb_default ScrollContainer__thumb"
-               style="height: 46px; transform: translateY(0px);"></div>
+               style="height: 46px; min-height: 46px;"></div>
          </div>
          <!-- #endregion -->
          <!-- #region scrollbar тени -->
@@ -157,9 +157,11 @@
          </div>
          <div class="ScrollContainer__shadow_bottom controls-Scroll__shadow controls-Scroll__shadow_bottom">
          </div>
+         <div class="ScrollContainer__footer"> </div>
+
          <!-- #endregion -->
       </div>
-      <div class="ScrollContainer__footer"></div>
+
       <!-- #endregion -->
       <!-- #region Нижняя подсказка -->
       <div id="bottomTooltip"
@@ -192,13 +194,13 @@
       <!-- #endregion -->
    </div>
 
-   <script src='/cdn/Maintenance/1.0.0/js/$.js'></script>
+   <script src='/cdn/Maintenance/1.0.1/js/$.js'></script>
    <script src='/cdn/Maintenance/1.0.1/js/i18n.js'></script>
    <script src='/cdn/Maintenance/1.0.3/js/diagnostic.js'></script>
-   <script src='/cdn/Maintenance/1.0.1/js/ScrollContainer.js'></script>
+   <script src='/cdn/Maintenance/1.0.2/js/ScrollContainer.js'></script>
    <script>
       window.onload = function () {
-         DiagnosticInit();
+         DiagnosticInit(userOs, userBrowser);
          ScrollConatainerInit();
       };
       window.onresize = ScrollConatainerInit;
