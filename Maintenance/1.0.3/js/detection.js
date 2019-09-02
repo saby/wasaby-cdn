@@ -18,11 +18,11 @@ var OS = /** @class */ (function () {
 
       /** Если определить название ОС не удалось, определяем семейство ОС и версию */
       var familyName = null;
-      for (var name_2 in OS.families) {
-         if (!OS.families.hasOwnProperty(name_2)) {
+      for (var name_2 in OS.family) {
+         if (!OS.family.hasOwnProperty(name_2)) {
             continue;
          }
-         if (OS.families[name_2].reg.test(userAgent)) {
+         if (OS.family[name_2].reg.test(userAgent)) {
             familyName = name_2;
             break;
          }
@@ -31,7 +31,7 @@ var OS = /** @class */ (function () {
       if (!familyName) {
          throw new Error('\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0438\u0442\u044C \u041E\u0421 \u0434\u043B\u044F \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u044F UserAgent ' + userAgent + ' :: ' + typeof userAgent);
       }
-      var family = OS.families[familyName];
+      var family = OS.family[familyName];
       var version = parseFloat((family.version.exec(userAgent) || [null]).pop()) || family.available;
       return {
          isAvailable: version >= family.available,
@@ -41,7 +41,7 @@ var OS = /** @class */ (function () {
       };
    };
    /** Семейства ОС */
-   OS.families = {
+   OS.family = {
       Windows: {
          name: 'Windows',
          reg: /Windows/,
@@ -84,21 +84,21 @@ var OS = /** @class */ (function () {
       Windows10: {
          name: 'Windows 10',
          reg: /(Windows 10.0|Windows NT 10.0)/,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          version: 10.0,
          isAvailable: true
       },
       Windows8_1: {
          name: 'Windows 8.1',
          reg: /(Windows 8.1|Windows NT 6.3)/,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          version: 6.3,
          isAvailable: true
       },
       Windows8: {
          name: 'Windows 8',
          reg: /(Windows 8|Windows NT 6.2)/,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          version: 6.2,
          isAvailable: true
       },
@@ -106,20 +106,20 @@ var OS = /** @class */ (function () {
          name: 'Windows 7',
          reg: /(Windows 7|Windows NT 6.1)/,
          version: 6.1,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          isAvailable: true
       },
       WindowsVista: {
          name: 'Windows Vista',
          reg: /Windows NT 6.0/,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          version: 6.0,
          isAvailable: false
       },
       WindowsServer2003: {
          name: 'Windows Server 2003',
          reg: /Windows NT 5.2/,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          version: 5.2,
          isAvailable: false
       },
@@ -127,56 +127,56 @@ var OS = /** @class */ (function () {
          name: 'Windows XP',
          reg: /(Windows NT 5.1|Windows XP)/,
          version: 5.1,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          isAvailable: false
       },
       Windows2000: {
          name: 'Windows 2000',
          reg: /(Windows NT 5.0|Windows 2000)/,
          version: 5.0,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          isAvailable: false
       },
       WindowsME: {
          name: 'Windows ME',
          reg: /(Win 9x 4.90|Windows ME)/,
          version: 4.9,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          isAvailable: false
       },
       Windows98: {
          name: 'Windows 98',
          reg: /(Windows 98|Win98)/,
          version: 4.5,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          isAvailable: false
       },
       Windows95: {
          name: 'Windows 95',
          reg: /(Windows 95|Win95|Windows_95)/,
          version: 4.2,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          isAvailable: false
       },
       WindowsNT4_0: {
          name: 'Windows NT 4.0',
          reg: /(Windows NT 4.0|WinNT4.0|WinNT|Windows NT)/,
          version: 4.0,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          isAvailable: false
       },
       WindowsCE: {
          name: 'Windows CE',
          reg: /Windows CE/,
          version: 3.5,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          isAvailable: false
       },
       Windows3_11: {
          name: 'Windows 3.11',
          reg: /Win16/,
          version: 3.11,
-         family: OS.families.Windows,
+         family: OS.family.Windows,
          isAvailable: false
       }
    };
@@ -195,17 +195,18 @@ var Browser = (function () {
             continue;
          }
          if (Browser.list[browserName].reg.test(userAgent)) {
+            Browser.list[browserName].isCompatibleMode = isCompatibleMode(userAgent);
             return Browser.list[browserName];
          }
       }
 
       /** Если однозначно определить браузер не удалось, определяем семейство и версию */
       var familyName = null;
-      for (var name_2 in Browser.families) {
-         if (!Browser.families.hasOwnProperty(name_2)) {
+      for (var name_2 in Browser.family) {
+         if (!Browser.family.hasOwnProperty(name_2)) {
             continue;
          }
-         if (Browser.families[name_2].reg.test(userAgent)) {
+         if (Browser.family[name_2].reg.test(userAgent)) {
             familyName = name_2;
             break;
          }
@@ -213,18 +214,18 @@ var Browser = (function () {
       if (!familyName) {
          throw new Error('\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0438\u0442\u044C \u0431\u0440\u0430\u0443\u0437\u0435\u0440 \u0434\u043B\u044F \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u044F UserAgent ' + userAgent + ' :: ' + typeof userAgent);
       }
-      var family = Browser.families[familyName];
+      var family = Browser.family[familyName];
       var _a = family.version, reg = _a.reg, available = _a.available;
       var version = parseFloat((reg.exec(userAgent) || [null]).pop()) || available; // при неопредленной версии считаем браузер актуальным
       return {
          isAvailable: version >= available,
-         isCompatibleMode: (family === Browser.families.IE) && isCompatibleMode(userAgent),
+         isCompatibleMode: (family === Browser.family.IE) && isCompatibleMode(userAgent),
          name: family.name,
          version: version,
          family: family
       };
    };
-   Browser.families = {
+   Browser.family = {
       YaBrowser: {
          name: 'Яндекс Браузер',
          reg: /\bYaBrowser\/(\d+)/i,
@@ -302,7 +303,7 @@ var Browser = (function () {
       IE11: {
          name: 'IE 11',
          reg: /Trident\/7.0/,
-         family: Browser.families.IE,
+         family: Browser.family.IE,
          version: 11,
          isAvailable: true
       }

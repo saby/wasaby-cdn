@@ -25,7 +25,7 @@ var DiagnosticInit = (function () {
          setSubHeader('Браузер не удовлетворяет требованиям');
 
          if (!os.isAvailable) {
-            if (os.family === OS.families.IOS || os.family === OS.families.Android) {
+            if (os.family === OS.family.IOS || os.family === OS.family.Android) {
                oldMobileOS(os);
                return;
             }
@@ -40,7 +40,7 @@ var DiagnosticInit = (function () {
             compatibleMode();
             return;
          }
-         if (os.family === OS.families.Windows) {
+         if (os.family === OS.family.Windows) {
             oldWindowsBrowser(browser);
             return;
          }
@@ -103,7 +103,7 @@ var DiagnosticInit = (function () {
          p(['У вас обнаружен устаревший браузер ', browser.name, ' версии ', '' + browser.version, '!']),
          p(['Пожалуйста, обновите его до последней версии.'])
       ]);
-      var downloadableDistr = (browser.family === Browser.families.Chrome || browser.family === Browser.families.YaBrowser);
+      var downloadableDistr = (browser.family === Browser.family.Chrome || browser.family === Browser.family.YaBrowser);
       setAction([
          $.createButton({
             caption: 'Скачать',

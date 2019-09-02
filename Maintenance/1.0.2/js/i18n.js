@@ -3,7 +3,7 @@ var rk = (function () {
    var dict = {
       'Ваша операционная система ': 'Your operating system ',
       ' версии ': ' version ',
-      ' больше не поддерживается.': 'is no longer supported.',
+      ' больше не поддерживается.': ' is no longer supported.',
       'Пожалуйста, обновите операционную систему.': 'Please update the operating system.',
       ' не поддерживается!': ' is not supported!',
       'Пожалуйста, обновите его в настройках устройства или перейдите на другую операционную систему.': 'Please update it in the device settings or change the operating system.',

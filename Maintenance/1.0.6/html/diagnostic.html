@@ -34,7 +34,7 @@
       if (userOs.isAvailable && userBrowser.isAvailable
          /** XP, Server 2003 и Vista не поддерживаются, но с Я.Браузером ок */
          || userBrowser.isAvailable
-         && userBrowser.family === Browser.families.YaBrowser
+         && userBrowser.family === Browser.family.YaBrowser
          && userOs.version >= OS.list.WindowsXP.version
          && userOs.version <= OS.list.WindowsVista.version
       ) {
@@ -215,11 +215,11 @@
    <script src='/cdn/Maintenance/1.0.4/js/ScrollContainer.js'></script>
    <script>
       window.onload = function () {
-         if (userBrowser.family === Browser.families.Chrome) {
+         if (userBrowser.family === Browser.family.Chrome) {
             /** Отключаем хак из diagnostic.css:30 */
             document.getElementById('Diagnostics__body').style['padding-bottom'] = '0';
          }
-         if (userBrowser.family === Browser.families.IE && userBrowser.version <= 8) {
+         if (userBrowser.family === Browser.family.IE && userBrowser.version <= 8) {
             var body = document.getElementById('Diagnostics__body');
             // body.style['padding-right'] = body.style['paddingRight'] = '52';
             document.getElementById('Diagnostics').style['overflow-y'] = 'scroll';
