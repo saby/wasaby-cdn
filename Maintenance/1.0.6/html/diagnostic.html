@@ -31,7 +31,7 @@
       var userAgent = window.navigator.userAgent;
       var userOs = OS.detect(userAgent);
       var userBrowser = Browser.detect(userAgent);
-      if (userOs.isAvailable && userBrowser.isAvailable
+      if (userOs.isAvailable && userBrowser.isAvailable && !userBrowser.isCompatibleMode
          /** XP, Server 2003 и Vista не поддерживаются, но с Я.Браузером ок */
          || userBrowser.isAvailable
          && userBrowser.family === Browser.family.YaBrowser
