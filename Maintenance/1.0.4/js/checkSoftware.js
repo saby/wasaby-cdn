@@ -9,7 +9,7 @@
    function isMobileSafariDetect(userAgent) {
       return IOS_REGEXP.test(userAgent) || (MAC_OS_REGEXP.test(userAgent) && navigator && navigator.maxTouchPoints > 0);
    }
-   if (isMobileSafariDetect()) {
+   if (isMobileSafariDetect(window.navigator.userAgent)) {
       document.cookie = IPAD_COOKIE_KEY + '=true;path=/';
    }
 
