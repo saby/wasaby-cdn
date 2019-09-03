@@ -27,19 +27,13 @@
 
    <script src='/cdn/Maintenance/1.0.3/js/detection.js'></script>
    <script>
-      /** Редирект, если ОС и браузер пользователя ок */
       var userAgent = window.navigator.userAgent;
-      var userOs = OS.detect(userAgent);
-      var userBrowser = Browser.detect(userAgent);
-      if (userBrowser.isAvailable && (userOs.isAvailable ||
-         /** XP, Server 2003 и Vista не поддерживаются, но с Я.Браузером ок */
-         userBrowser.family === Browser.family.YaBrowser
-         && userOs.version >= OS.list.WindowsXP.version
-         && userOs.version <= OS.list.WindowsVista.version)
-      ) {
+      /** Редирект, если ОС и браузер пользователя ок */
+      if (isSoftwareAvailable(userAgent)) {
          redirect();
       }
 
+      /** Редирект на исходную страницу */
       function redirect() {
          var RETURN_LINK_PREFIX = 'ret=';
          var returnLink = window.location.href.indexOf(RETURN_LINK_PREFIX) !== -1 ? window.location.href.split(RETURN_LINK_PREFIX).pop() : '';
@@ -214,6 +208,7 @@
    <script src='/cdn/Maintenance/1.0.4/js/ScrollContainer.js'></script>
    <script>
       window.onload = function () {
+         var userBrowser = Browser.detect(userAgent);
          if (userBrowser.family === Browser.family.Chrome) {
             /** Отключаем хак из diagnostic.css:30 */
             document.getElementById('Diagnostics__body').style['padding-bottom'] = '0';
@@ -225,7 +220,7 @@
             document.getElementById('Diagnostics__image').style['float'] = 'left';
             document.getElementById('SbisEnv-ParkingPage__Header-leftBlock').style['float'] = 'left';
          }
-         DiagnosticInit(userOs, userBrowser);
+         DiagnosticInit(OS.detect(userAgent), userBrowser);
          ScrollConatainerInit();
       };
       window.onresize = ScrollConatainerInit;

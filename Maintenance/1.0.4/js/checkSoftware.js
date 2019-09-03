@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-/*global OS, Browser */
+/*global OS, Browser, isSoftwareAvailable */
 (function () {
    var GET_params = window.location.href.split('?').pop().split('&');
    for (var i = 0; i < GET_params.length; i++) {
@@ -12,18 +12,12 @@
          return;
       }
    }
-   checkSoftware();
-
-   /** Проверка ос и браузер */
-   function checkSoftware() {
-      var userAgent = window.navigator.userAgent;
-      var userOs = OS.detect(userAgent);
-      var userBrowser = Browser.detect(userAgent);
-      if (!userOs.isAvailable || !userBrowser.isAvailable) {
-         redirect();
-      }
+  
+   if (!isSoftwareAvailable(window.navigator.userAgent)){
+      redirect();
    }
-   /** Redirect на страницу диагностики */
+   
+   /** Редирект на страницу диагностики */
    function redirect() {
       var RETURN_LINK_PREFIX = '?ret=';
       var DIAGNOSTIC_PAGE = '/cdn/Maintenance/1.0.6/html/diagnostic.html';
