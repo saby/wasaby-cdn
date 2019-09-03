@@ -323,3 +323,20 @@ var Browser = (function () {
          || (ua.indexOf('Trident/4.0') > -1 && ua.indexOf('MSIE 7.0') > -1); // IE 8
    }
 }());
+
+/** 
+ * Возвращает true, если ПО удовлетворительное
+ * @param {String} userAgent
+ * @returns {Boolean}
+ */
+function isSoftwareAvailable(userAgent) {
+   /** Редирект, если ОС и браузер пользователя ок */
+   var userBrowser = Browser.detect(userAgent);
+   var userOs = OS.detect(userAgent);
+   return (userBrowser.isAvailable && (userOs.isAvailable ||
+      /** XP, Server 2003 и Vista не поддерживаются, но с Я.Браузером ок */
+      userBrowser.family === Browser.family.YaBrowser
+      && userOs.version >= OS.list.WindowsXP.version
+      && userOs.version <= OS.list.WindowsVista.version)
+   );
+}
