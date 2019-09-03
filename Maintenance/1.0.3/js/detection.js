@@ -303,6 +303,7 @@ var Browser = (function () {
       IE11: {
          name: 'IE 11',
          reg: /rv:11/,
+         isCompatibleMode: null,
          family: Browser.family.IE,
          version: 11,
          isAvailable: true
