@@ -31,12 +31,11 @@
       var userAgent = window.navigator.userAgent;
       var userOs = OS.detect(userAgent);
       var userBrowser = Browser.detect(userAgent);
-      if (userOs.isAvailable && userBrowser.isAvailable && !userBrowser.isCompatibleMode
+      if (userBrowser.isAvailable && (userOs.isAvailable ||
          /** XP, Server 2003 и Vista не поддерживаются, но с Я.Браузером ок */
-         || userBrowser.isAvailable
-         && userBrowser.family === Browser.family.YaBrowser
+         userBrowser.family === Browser.family.YaBrowser
          && userOs.version >= OS.list.WindowsXP.version
-         && userOs.version <= OS.list.WindowsVista.version
+         && userOs.version <= OS.list.WindowsVista.version)
       ) {
          redirect();
       }

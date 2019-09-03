@@ -302,7 +302,7 @@ var Browser = (function () {
    Browser.list = {
       IE11: {
          name: 'IE 11',
-         reg: /Trident\/7.0/,
+         reg: /rv:11/,
          family: Browser.family.IE,
          version: 11,
          isAvailable: true
