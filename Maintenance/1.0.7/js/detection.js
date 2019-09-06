@@ -189,13 +189,13 @@ var Browser = (function () {
    }
    Browser.detect = function (userAgent_) {
       var userAgent = userAgent_.replace('_', '.'); // в некоторых значениях user agent версия записывается 10_10_6 вместо 10.10.6
-
       for (var browserName in Browser.list) {
          if (!Browser.list.hasOwnProperty(browserName)) {
             continue;
          }
          if (Browser.list[browserName].reg.test(userAgent)) {
-            Browser.list[browserName].isCompatibleMode = isCompatibleMode(userAgent);
+            Browser.list[browserName].isCompatibleMode = (isCompatibleMode(userAgent) ||
+               document.documentMode && Browser.list[browserName].version !== document.documentMode);
             return Browser.list[browserName];
          }
       }
@@ -219,7 +219,7 @@ var Browser = (function () {
       var version = parseFloat((reg.exec(userAgent) || [null]).pop()) || available; // при неопредленной версии считаем браузер актуальным
       return {
          isAvailable: version >= available,
-         isCompatibleMode: (family === Browser.family.IE) && isCompatibleMode(userAgent),
+         isCompatibleMode: (isCompatibleMode(userAgent) || document.documentMode && version !== document.documentMode),
          name: family.name,
          version: version,
          family: family
@@ -311,14 +311,16 @@ var Browser = (function () {
    };
    return Browser;
    /**
-    * Запущен ли IE в режиме совместимости
+    * Проверка соответствия версии движка IE и браузера. 
+    * При расхождении полагаем активным режим эмуляции
+    * ! IE < 10 не работает
     * @param {UserAgent} ua
     * @returns {Boolean}
     */
    function isCompatibleMode(ua) {
-      if (!ua) { return false; }
+      if (!ua || !/Trident/.test(ua)) { return false; }
       var trident = parseFloat((/Trident\/([0-9]{1,}[.0-9]{0,})/.exec(ua) || [0]).pop());
-      var ie = parseFloat((/MSIE ([0-9]{1,}[.0-9]{0,})/.exec(ua) || [0]).pop());
+      var ie = parseFloat((/(MSIE |rv:)([0-9]{1,}[.0-9]{0,})/.exec(ua) || [0]).pop());
       /**
        * Разница между движком и версией браузера == 4
        * https://ru.wikipedia.org/wiki/Microsoft_Trident
@@ -334,12 +336,13 @@ var Browser = (function () {
  */
 function isSoftwareAvailable(userAgent) {
    /** Редирект, если ОС и браузер пользователя ок */
-   var userBrowser = Browser.detect(userAgent);
-   var userOs = OS.detect(userAgent);
-   return (userBrowser.isAvailable && (userOs.isAvailable ||
-      /** XP, Server 2003 и Vista не поддерживаются, но с Я.Браузером ок */
-      userBrowser.family === Browser.family.YaBrowser
-      && userOs.version >= OS.list.WindowsXP.version
-      && userOs.version <= OS.list.WindowsVista.version)
-   );
+   var browser = Browser.detect(userAgent);
+   var os = OS.detect(userAgent);
+
+   return browser.isAvailable
+      && (os.isAvailable ||
+         /** XP, Server 2003 и Vista не поддерживаются, но с Я.Браузером ок */
+         browser.family === Browser.family.YaBrowser
+         && os.version >= OS.list.WindowsXP.version
+         && os.version <= OS.list.WindowsVista.version);
 }
