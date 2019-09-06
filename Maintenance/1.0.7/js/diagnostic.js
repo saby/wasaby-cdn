@@ -36,7 +36,7 @@ var DiagnosticInit = (function () {
             oldOS(os);
             return;
          }
-         if (document.documentMode && browser.version !== document.documentMode || browser.isCompatibleMode) {
+         if (browser.isCompatibleMode) {
             compatibleMode();
             return;
          }
