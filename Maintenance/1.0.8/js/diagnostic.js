@@ -8,6 +8,10 @@ var DiagnosticInit = (function () {
       'Яндекс Браузер': '/cdn/Maintenance/1.0.8/exe/Yandex_Browser_v17.4.1.919.exe',
       //  внешние страницы загрузки
       'Firefox': 'https://www.mozilla.org/ru/firefox/download/thanks/',
+      /**
+       * Предлагаем яндекс версию т.к в старой opera не открывается оф.сайт opera.com
+       * https://online.sbis.ru/shared/disk/b2b6d3fe-d3c7-4890-9698-42f1e4cbadc0
+       */
       'Opera': 'https://yandex.ru/opera/',
       'OperaChrome': 'https://yandex.ru/opera/',
       'Safari': 'https://www.apple.com/ru/safari/',
