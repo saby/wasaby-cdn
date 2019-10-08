@@ -6,4 +6,3 @@
  License: www.highcharts.com/license
 */
 (function(a){"object"===typeof module&&module.exports?(a["default"]=a,module.exports=a):"function"===typeof define&&define.amd?define(function(){return a}):a("undefined"!==typeof Highcharts?Highcharts:void 0)})(function(a){});
-//# sourceMappingURL=overlapping-datalabels.js.map

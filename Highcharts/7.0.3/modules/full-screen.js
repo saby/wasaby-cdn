@@ -8,4 +8,3 @@
  License: www.highcharts.com/license
 */
 (function(a){"object"===typeof module&&module.exports?(a["default"]=a,module.exports=a):"function"===typeof define&&define.amd?define(function(){return a}):a("undefined"!==typeof Highcharts?Highcharts:void 0)})(function(a){(function(a){a.FullScreen=function(a){this.init(a.parentNode)};a.FullScreen.prototype={init:function(a){a.requestFullscreen?a.requestFullscreen():a.mozRequestFullScreen?a.mozRequestFullScreen():a.webkitRequestFullscreen?a.webkitRequestFullscreen():a.msRequestFullscreen&&a.msRequestFullscreen()}}})(a)});
-//# sourceMappingURL=full-screen.js.map
