@@ -298,9 +298,9 @@ var Browser = (function () {
     * @returns {Boolean}
     */
    function isCompatibleMode(ua) {
-      if (!ua || !/Trident/.test(ua)) { return false; }
-      var trident = parseFloat((/Trident\/([0-9]{1,}[.0-9]{0,})/.exec(ua) || [0]).pop());
-      var ie = parseFloat((/(MSIE |rv:)([0-9]{1,}[.0-9]{0,})/.exec(ua) || [0]).pop());
+      if (!ua || !/Trident/i.test(ua)) { return false; }
+      var trident = parseFloat((/Trident\/([0-9]{1,}[.0-9]{0,})/i.exec(ua) || [0]).pop());
+      var ie = parseFloat((/(MSIE |rv:)([0-9]{1,}[.0-9]{0,})/i.exec(ua) || [0]).pop());
       /**
        * Разница между движком и версией браузера == 4
        * https://ru.wikipedia.org/wiki/Microsoft_Trident
