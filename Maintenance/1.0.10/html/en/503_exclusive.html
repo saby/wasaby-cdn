@@ -26,11 +26,11 @@
          <div class="SbisEnv-ParkingPage__Header-center ws-flexbox ws-align-items-baseline">
             <a href="/" class="SbisEnv-ParkingPage__Header-leftBlock ws-flexbox ws-align-items-baseline">
                <img class="SbisEnv-ParkingPage__Header-logo" src="/cdn/SabyLogo/1.0.0/saby.svg">
-               
             </a>
             <div
                class="SbisEnv-ParkingPage__Header-rightBlock ws-flex-grow-1 ws-flexbox ws-justify-content-end ws-align-items-baseline">
-               <a href="https://sbis.ru/support" target="_blank" class="SbisEnv-ParkingPage__Header-title"> Support </a></div>
+               <a href="https://sbis.ru/support" target="_blank" class="SbisEnv-ParkingPage__Header-title"> Support </a>
+            </div>
          </div>
       </div>
       <div class="SbisEnv-ParkingContent">
@@ -41,6 +41,20 @@
             <div class="SbisEnv-ParkingBody__footer"></div>
          </div>
       </div>
+   </div>
+
+   <script>
+      window.onload = function() {
+         if (typeof window === 'undefined') {
+            return;
+         }
+
+         const MIN = 60 * 1000;
+         setTimeout(() => {
+            window.location.reload();
+         }, MIN);
+      }
+   </script>
 </body>
 
 </html>
