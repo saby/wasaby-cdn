@@ -49,10 +49,14 @@
             return;
          }
 
-         const MIN = 60 * 1000;
+         const SEC = 1000;
+         const MIN_RATIO = 60;
+         const MIN = MIN_RATIO * SEC;
+
+         const reloadInterval = MIN + Math.floor(Math.random() * (2 * MIN_RATIO + 1)) * SEC;
          setTimeout(() => {
             window.location.reload();
-         }, MIN);
+         }, reloadInterval);
       }
    </script>
 </body>
