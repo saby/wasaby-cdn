@@ -1,6 +1,6 @@
 {
-   "name": "cdn",
-   "version": "20.1000.0",
+   "name": "sbis-cdn",
+   "version": "20.3000.0",
    "repository": {
       "type": "git",
       "url": "git@git.sbis.ru:sbis/cdn.git"
