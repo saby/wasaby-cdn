@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ui_module for_cdn="1" id="b127fcb9-f164-4ae5-a6a0-658ce340d648" name="JQuery" responsible="Мальцев А.А." version="1.00">
+<ui_module for_cdn="1" id="b127fcb9-f164-4ae5-a6a0-658ce340d648" package="Платформа" name="JQuery" responsible="Мальцев А.А." version="1.00">
 
   <description>Библиотека jQuery</description>
 
