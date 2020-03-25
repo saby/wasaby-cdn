@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ui_module for_cdn="1" id="70fd296c-ed07-4fe5-9393-f8fdc9fc7df3" name="Highcharts" responsible="Крайнов Д.О." version="1.00">
+<ui_module for_cdn="1" id="70fd296c-ed07-4fe5-9393-f8fdc9fc7df3" package="Платформа" name="Highcharts" responsible="Угриновский Н.В." version="1.00">
 
   <description>Библиотека Highcharts</description>
 
