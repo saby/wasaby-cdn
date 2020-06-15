@@ -6,7 +6,7 @@ function autoReload(minTimeout, maxTimeout) {
    window.onload = function onWindowLoaded() {
       var MINUTES = 60000;
       var start = Date.now();
-      var reloadTimeout = (minTimeout + Math.round(Math.random() * (maxTimeout - minTimeout))) * MINUTES;
+      var reloadTimeout = minTimeout * MINUTES + Math.round(Math.random() * (maxTimeout - minTimeout) * MINUTES);
       var reloadTime = start + reloadTimeout;
 
       function reload() {
