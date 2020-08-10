@@ -1,6 +1,6 @@
 @Library('pipeline') _
 
-def version = '20.4000'
+def version = '20.6000'
 
 node ('controls') {
     checkout_pipeline("20.4000/bugfix/bls/builder_timeout")
