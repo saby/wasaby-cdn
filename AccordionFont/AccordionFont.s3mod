@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ui_module for_cdn="1" id="658a9cce-31ba-4cfe-ac20-eca0e01efc39" name="AccordionFont" responsible="Клепиков И.А." version="1.00">
+<ui_module for_cdn="1" id="658a9cce-31ba-4cfe-ac20-eca0e01efc39" name="AccordionFont" package="Платформа" responsible="Клепиков И.А." version="1.00">
 
   <description>AccordionFont</description>
 
