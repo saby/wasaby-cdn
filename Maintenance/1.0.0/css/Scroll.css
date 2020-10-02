@@ -37,7 +37,6 @@
 
   .controls-Scroll__content {
     height: 100%;
-    width: 100%;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
