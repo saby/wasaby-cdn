@@ -49,6 +49,7 @@
       return IOS_REGEXP.test(userAgent) || (MAC_OS_REGEXP.test(userAgent) && navigator && navigator.maxTouchPoints > 0);
    }
    function isTouchScreen() {
+      var result = false;
       if (window.PointerEvent && ('maxTouchPoints' in navigator)) {
          // if Pointer Events are supported, just check maxTouchPoints
          if (navigator.maxTouchPoints > 0) {
@@ -64,5 +65,6 @@
             result = true;
          }
       }
+      return result;
    }
 }());
