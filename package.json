@@ -1,6 +1,6 @@
 {
    "name": "wasaby-cdn",
-   "version": "20.7000.0",
+   "version": "20.7100.0",
    "repository": {
       "type": "git",
       "url": "git@git.sbis.ru:sbis/cdn.git"
