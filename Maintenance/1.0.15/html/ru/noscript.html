@@ -7,6 +7,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge" data-vdomignore="true" />
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <script>
+
       function getRedirectUrl(redirectParam) {
          var whiteList = [
             'sbis.ru',
@@ -37,7 +38,7 @@
             }
             return url;
          }
-
+         var returnLink = window.location.href.indexOf(RETURN_LINK_PREFIX) !== -1 ? window.location.href.split(RETURN_LINK_PREFIX).pop() : '';
          if (returnLink !== '') {
             var validLink = whiteList.some(function (domain) {
                return window.location.hostname.indexOf(domain, window.location.hostname.length - domain.length) !== -1;
