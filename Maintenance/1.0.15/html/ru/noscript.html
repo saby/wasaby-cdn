@@ -40,15 +40,10 @@
 
          var returnLink = window.location.href.indexOf(redirectParam) !== -1 ? window.location.href.split(redirectParam).pop() : '';
          if (returnLink !== '') {
-            try {
-               var url = new URL(returnLink);
-               var validLink = whiteList.some(function (domain) {
-                  return url.hostname.indexOf(domain, url.hostname.length - domain.length) !== -1;
-               });
-               returnLink = validLink ? returnLink : removeURLParameter(window.location.href, 'ret');
-            } catch (error) {
-               returnLink = '';
-            }
+            var validLink = whiteList.some(function (domain) {
+               return  window.location.hostname.indexOf(domain,  window.location.hostname - domain.length) !== -1;
+            });
+            returnLink = validLink ? returnLink : removeURLParameter(window.location.href, 'ret');
 
          }
          return returnLink;
