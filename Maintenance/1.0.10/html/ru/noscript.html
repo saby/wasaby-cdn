@@ -7,56 +7,10 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge" data-vdomignore="true" />
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <script>
-        function getRedirectUrl(redirectParam) {
-         var whiteList = [
-            'sbis.ru',
-            'wasaby.dev',
-            'saby.ru',
-            'xn--80appbun8c.xn--h1ahgajha2if.xn--p1ai',
-            'sabyget.ru',
-            'sabytrade.ru',
-            'tensor.ru',
-            'inory.ru',
-            'dpc24.ru',
-            'saby.dev'
-         ];
-         function removeURLParameter(url, parameter) {
-            var urlparts = url.split('?');
-            if (urlparts.length >= 2) {
-
-               var prefix = encodeURIComponent(parameter) + '=';
-               var pars = urlparts[1].split(/[&;]/g);
-
-               for (var i = pars.length; i-- > 0;) {
-                  if (pars[i].lastIndexOf(prefix, 0) !== -1) {
-                     pars.splice(i, 1);
-                  }
-               }
-
-               return urlparts[0] + (pars.length > 0 ? '?' + pars.join('&') : '');
-            }
-            return url;
-         }
-
-         var returnLink = window.location.href.indexOf(redirectParam) !== -1 ? window.location.href.split(redirectParam).pop() : '';
-         if (returnLink !== '') {
-            var validLink = whiteList.some(function (domain) {
-               return  window.location.hostname.indexOf(domain,  window.location.hostname - domain.length) !== -1;
-            });
-            returnLink = validLink ? returnLink : removeURLParameter(window.location.href, 'ret');
-
-         }
-         return returnLink;
-      }
-
-
       /** Редирект обратно, если js включен */
       var RETURN_LINK_PREFIX = 'ret=';
-
-      var newUrl = getRedirectUrl(RETURN_LINK_PREFIX);
-      if (newUrl !== '') {
-         window.location.href = newUrl;
-      }
+      var returnLink = window.location.href.indexOf(RETURN_LINK_PREFIX) !== -1 ? window.location.href.split(RETURN_LINK_PREFIX).pop() : '';
+      window.location.href = window.location.protocol + '//' + window.location.host + returnLink;
    </script>
    <link rel="shortcut icon" sizes="16x16" href="/cdn/Maintenance/1.0.0/img/favicon_16.ico" type="image/x-icon" />
    <link rel="shortcut icon" sizes="64x64" href="/cdn/Maintenance/1.0.0/img/favicon_64.ico" type="image/x-icon" />

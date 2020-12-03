@@ -7,7 +7,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge" data-vdomignore="true" />
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <script>
-      function getRedirectUrl(redirectParam) {
+ function getRedirectUrl(redirectParam) {
          var whiteList = [
             'sbis.ru',
             'wasaby.dev',
@@ -40,10 +40,15 @@
 
          var returnLink = window.location.href.indexOf(redirectParam) !== -1 ? window.location.href.split(redirectParam).pop() : '';
          if (returnLink !== '') {
-            var validLink = whiteList.some(function (domain) {
-               return window.location.hostname.indexOf(domain,  window.location.hostname - domain.length) !== -1;
-            });
-            returnLink = validLink ? returnLink : removeURLParameter(window.location.href, 'ret');
+            try {
+               var url = new URL(returnLink);
+               var validLink = whiteList.some(function (domain) {
+                  return url.hostname.indexOf(domain, url.hostname.length - domain.length) !== -1;
+               });
+               returnLink = validLink ? returnLink : removeURLParameter(window.location.href, 'ret');
+            } catch (error) {
+               returnLink = '';
+            }
 
          }
          return returnLink;
@@ -81,7 +86,7 @@
             </a>
             <div
                class="SbisEnv-ParkingPage__Header-rightBlock ws-flex-grow-1 ws-flexbox ws-justify-content-end ws-align-items-baseline">
-               <a href="https://sbis.ru/support" target="_blank" class="SbisEnv-ParkingPage__Header-title"> Support </a>
+              <a href="https://sbis.ru/support" target="_blank" class="SbisEnv-ParkingPage__Header-title"> Support </a>
             </div>
          </div>
       </div>
@@ -91,8 +96,7 @@
 
             <div class="SbisEnv-ParkingBody__message">The use of JavaScript is bloked in your browser settings</div>
             <div class="SbisEnv-ParkingBody__action">
-               <a href="https://sbis.ru/help/start/teh_terms/browser" target="_blank"> <span> Go to the help page
-                  </span> </a>
+               <a href="https://sbis.ru/help/start/teh_terms/browser" target="_blank"> <span> Go to the help page </span> </a>
             </div>
             <div class="SbisEnv-ParkingBody__footer"></div>
          </div>
