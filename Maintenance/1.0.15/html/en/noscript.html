@@ -16,6 +16,17 @@
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.12/css/style.css" data-vdomignore="true">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.7/css/Header.css" data-vdomignore="true">
    <script src="/cdn/Maintenance/1.0.15/js/checkUrl.js"></script>
+   <script>
+
+      /** Редирект обратно, если js включен */
+      var RETURN_LINK_PREFIX = 'ret=';
+
+      var newUrl = getRedirectUrl(window.location.href, RETURN_LINK_PREFIX);
+      if (newUrl !== '' && window.location.href !== newUrl) {
+         window.location.href = newUrl;
+      }
+
+   </script>
 </head>
 
 <body class="ws-is-chrome ws-is-windows-10 ws-is-desktop-platform ws-is-no-touch controls-DragNDrop" fixcompatible="1"

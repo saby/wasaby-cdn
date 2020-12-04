@@ -16,6 +16,17 @@
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.12/css/style.css" data-vdomignore="true">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.7/css/Header.css" data-vdomignore="true">
    <script src="/cdn/Maintenance/1.0.15/js/checkUrl.js"></script>
+   <script>
+
+      /** Редирект обратно, если js включен */
+      var RETURN_LINK_PREFIX = 'ret=';
+
+      var newUrl = getRedirectUrl(window.location.href, RETURN_LINK_PREFIX);
+      if (newUrl !== '' && window.location.href !== newUrl) {
+         window.location.href = newUrl;
+      }
+
+   </script>
 </head>
 
 <body class="ws-is-chrome ws-is-windows-10 ws-is-desktop-platform ws-is-no-touch controls-DragNDrop" fixcompatible="1"
@@ -31,8 +42,6 @@
                class="SbisEnv-ParkingPage__Header-rightBlock ws-flex-grow-1 ws-flexbox ws-justify-content-end ws-align-items-baseline">
                <a href="https://sbis.ru/support" target="_blank" class="SbisEnv-ParkingPage__Header-title"> Поддержка
                </a>
-               <a target="_blank" href="https://cdn.sbis.ru/cdn/Maintenance/1.0.14/html/ru/noscript.html?ret=evil.com">22222</a>
-
             </div>
          </div>
       </div>

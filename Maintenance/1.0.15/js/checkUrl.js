@@ -1,7 +1,9 @@
-(function () {
-    if (!window) {
-        return
-    }
+/**
+     * Проверяет параметр ret в адресной строке
+     * Если параметр валидная ссылка и ведет на наш сайт, 
+     * то происходит переход при включении пользователем js
+     */
+function getRedirectUrl(urlString, retPrefix) {
     function removeURLParameter(url, parameter) {
         var urlparts = url.split('?');
         if (urlparts.length >= 2) {
@@ -30,30 +32,22 @@
     function isValidLink(link) {
         var reg = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#()?&//=]*)/;
         return reg.test(link);
-    }/**
-     * Проверяет параметр ret в адресной строке
-     * Если параметр валидная ссылка и ведет на наш сайт, 
-     * то происходит переход при включении пользователем js
-     */
-    function getRedirectUrl() {
-        var returnLink = window.location.href.indexOf(RETURN_LINK_PREFIX) !== -1 ? window.location.href.split(RETURN_LINK_PREFIX).pop() : '';
-        var validLink = getSecondLevel(window.location.hostname)
+    }
+    var locationHost;
+    if (isValidLink(urlString)) {
+        var link = document.createElement('a');
+        link.href = urlString;
+        locationHost = getSecondLevel(link.hostname)
+        var returnLink = urlString.indexOf(retPrefix) !== -1 ? urlString.split(retPrefix).pop() : '';
+        var validLink = getSecondLevel(locationHost);
         if (returnLink !== '') {
             if (isValidLink(returnLink)) {
                 var link = document.createElement('a');
                 link.href = returnLink;
-                var linkFromParams = getSecondLevel(link.hostname)
+                var retLink = getSecondLevel(link.hostname)
             }
         }
-        returnLink = validLink === linkFromParams ? returnLink : removeURLParameter(window.location.href, 'ret');
-        return returnLink;
+        returnLink = validLink === retLink ? returnLink : removeURLParameter(urlString, 'ret');
     }
-
-    /** Редирект обратно, если js включен */
-    var RETURN_LINK_PREFIX = 'ret=';
-
-    var newUrl = getRedirectUrl(RETURN_LINK_PREFIX);
-    if (newUrl !== '' && window.location.href !== newUrl) {
-        window.location.href = newUrl;
-    }
-})();
+    return returnLink;
+}
