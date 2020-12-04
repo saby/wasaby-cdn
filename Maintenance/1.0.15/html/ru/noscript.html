@@ -6,45 +6,6 @@
 <head key="1_1_" tabindex="0">
    <meta http-equiv="X-UA-Compatible" content="IE=edge" data-vdomignore="true" />
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-   <script>
-      function getRedirectUrl(redirectParam) {
-         function removeURLParameter(url, parameter) {
-            var urlparts = url.split('?');
-            if (urlparts.length >= 2) {
-
-               var prefix = encodeURIComponent(parameter) + '=';
-               var pars = urlparts[1].split(/[&;]/g);
-
-               for (var i = pars.length; i-- > 0;) {
-                  if (pars[i].lastIndexOf(prefix, 0) !== -1) {
-                     pars.splice(i, 1);
-                  }
-               }
-
-               return urlparts[0] + (pars.length > 0 ? '?' + pars.join('&') : '');
-            }
-            return url;
-         }
-
-         var returnLink = window.location.href.indexOf(RETURN_LINK_PREFIX) !== -1 ? window.location.href.split(RETURN_LINK_PREFIX).pop() : '';
-         var validLink = window.location.hostname.split('.').splice(-2).join('.');
-         if (returnLink !== '') {
-            var linkFromParams = returnLink.replaceAll('/', '').split('.').splice(-2).join('.');
-            returnLink = validLink === linkFromParams ? returnLink : removeURLParameter(window.location.href, 'ret');
-         }
-
-         return returnLink;
-      }
-
-
-      /** Редирект обратно, если js включен */
-      var RETURN_LINK_PREFIX = 'ret=';
-
-      var newUrl = getRedirectUrl(RETURN_LINK_PREFIX);
-      if (newUrl !== '') {
-         window.location.href = newUrl;
-      }
-   </script>
    <link rel="shortcut icon" sizes="16x16" href="/cdn/Maintenance/1.0.0/img/favicon_16.ico" type="image/x-icon" />
    <link rel="shortcut icon" sizes="64x64" href="/cdn/Maintenance/1.0.0/img/favicon_64.ico" type="image/x-icon" />
    <link rel="shortcut icon" sizes="128x128" href="/cdn/Maintenance/1.0.0/img/favicon_128.ico" type="image/x-icon" />
@@ -54,12 +15,11 @@
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.2/css/Application.css" data-vdomignore="true">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.12/css/style.css" data-vdomignore="true">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.7/css/Header.css" data-vdomignore="true">
-
+   <script src="/cdn/Maintenance/1.0.15/js/checkUrl.js"></script>
 </head>
 
 <body class="ws-is-chrome ws-is-windows-10 ws-is-desktop-platform ws-is-no-touch controls-DragNDrop" fixcompatible="1"
    id="body" tabindex="0">
-
    <div class="SbisEnv-ParkingPage zIndex-context" tabindex="0">
       <div class="SbisEnv-ParkingPage__Header" tabindex="0">
          <div class="SbisEnv-ParkingPage__Header-center ws-flexbox ws-align-items-baseline">
@@ -71,6 +31,8 @@
                class="SbisEnv-ParkingPage__Header-rightBlock ws-flex-grow-1 ws-flexbox ws-justify-content-end ws-align-items-baseline">
                <a href="https://sbis.ru/support" target="_blank" class="SbisEnv-ParkingPage__Header-title"> Поддержка
                </a>
+               <a target="_blank" href="https://cdn.sbis.ru/cdn/Maintenance/1.0.14/html/ru/noscript.html?ret=evil.com">22222</a>
+
             </div>
          </div>
       </div>
