@@ -19,9 +19,9 @@
    <script>
 
       /** Редирект обратно, если js включен */
-      var RETURN_LINK_PREFIX = 'ret=';
+      var RETURN_LINK_PREFIX = 'ret';
 
-      var newUrl = getRedirectUrl(window.location.href, RETURN_LINK_PREFIX);
+      var newUrl = getRedirectUrl(window.location, RETURN_LINK_PREFIX);
       if (newUrl !== '' && window.location.href !== newUrl) {
          window.location.href = newUrl;
       }
