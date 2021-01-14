@@ -26288,4 +26288,6 @@
   exports.unstable_createPortal = unstable_createPortal;
   exports.unstable_renderSubtreeIntoContainer = renderSubtreeIntoContainer;
   exports.version = ReactVersion;
+
+  return exports;
 })));

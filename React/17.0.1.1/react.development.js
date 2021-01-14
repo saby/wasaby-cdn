@@ -3551,4 +3551,6 @@
    exports.useRef = useRef;
    exports.useState = useState;
    exports.version = ReactVersion;
+
+   return exports;
 })));
