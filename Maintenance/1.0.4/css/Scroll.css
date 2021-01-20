@@ -1,0 +1,25 @@
+.controls-Scroll {
+  position: relative;
+  overflow: hidden;
+}
+
+.controls-Scroll__shadow {
+  left: 0;
+  right: 0;
+  z-index: 5;
+  position: absolute;
+  pointer-events: none;
+  height: 8px;
+}
+
+.controls-Scroll__shadow_top {
+  top: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.15)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+}
+
+.controls-Scroll__shadow_bottom {
+  bottom: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.15)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+}
