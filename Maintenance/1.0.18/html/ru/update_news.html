@@ -13,8 +13,8 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=1024">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.2/css/Application.css">
-   <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.3/css/Scroll.css">
-   <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.4/css/ScrollContainer.css">
+   <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.4/css/Scroll.css">
+   <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.5/css/ScrollContainer.css">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.7/css/Header.css">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.14/css/RichEditor.css">
    <link type="text/css" rel="stylesheet" href="/cdn/Maintenance/1.0.10/css/update_news.css">
@@ -41,48 +41,27 @@
                <div class="UpdateNews__content-header">
                   <span class="UpdateNews__localizable">{main_title}</span>
                </div>
-
                <div class="UpdateNews__content-header UpdateNews__content-subheader {visible_subheader}" >
                   <span class="UpdateNews__localizable">{subheader}</span>
                </div>
 
-               <div class="controls-Scroll ws-flexbox ws-flex-column ScrollContainer__content-scroll ws-flex-shrink-0 ws-flex-grow-1">
-                  <span
-                     class="ScrollContainer__content ScrollContainer__content-area controls-Scroll__content ws-BlockGroup controls-Scroll__overflowScrolling controls-Scroll__content_possibleScroll controls-Scroll__content_scroll">
-                     <div class="ScrollContainer__userContent ScrollContainer__content-text controls-Scroll__userContent">
-
-                        <div>
-                           {news}
-                        </div>
-
-                     </div>
-                  </span>
-
-                  <div
-                     class="ScrollContainer__scrollbar ScrollContainer__content-bar controls-VScrollbar controls-Scroll__scrollbar controls-Scroll__scrollbar_hidden">
-                     <div class="controls-VScrollbar__thumb controls-VScrollbar__thumb_default ScrollContainer__thumb"
-                        style="height: 46px; transform: translateY(0px);"></div>
+               <div class="controls-Scroll">
+                  <div class="ScrollContainer__content-scroll">
+                     {news}
                   </div>
-
-                  <div
-                     class="ScrollContainer__shadow_top controls-Scroll__shadow controls-Scroll__shadow_top ws-invisible">
-                  </div>
-                  <div class="ScrollContainer__shadow_bottom controls-Scroll__shadow controls-Scroll__shadow_bottom">
-                  </div>
-
+                  <div class="ScrollContainer__shadow_top controls-Scroll__shadow controls-Scroll__shadow_top"></div>
+                  <div class="ScrollContainer__shadow_bottom controls-Scroll__shadow controls-Scroll__shadow_bottom"></div>
                </div>
-
                <div class="ScrollContainer__footer"></div>
 
             </div>
          </div>
       </div>
    </div>
-   <script src='/cdn/Maintenance/1.0.5/js/ScrollContainer.js'></script>
+   <script src='/cdn/Maintenance/1.0.0/js/Scroll.js'></script>
    <script src='/cdn/Maintenance/1.0.14/js/on_update_check.js'></script>
    <script src='/cdn/Maintenance/1.0.14/js/on_update_translate.js'></script>
    <script>
-      window.onload = window.onresize = ScrollConatainerInit;
       PARK_PAGE_CHECK_PERIOD = 1000 * Math.floor(Math.random() * {period_dev} + {period_base});
       waitForUnlock();
    </script>
