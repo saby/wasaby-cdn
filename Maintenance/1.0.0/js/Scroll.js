@@ -1,20 +1,31 @@
 (function() {
-   var scrollContent = document.querySelector('.ScrollContainer__content-scroll');
-   var shadow_top = document.querySelector('.ScrollContainer__shadow_top');
-   var shadow_bottom = document.querySelector('.ScrollContainer__shadow_bottom');
+   var scrollContainer = document.querySelector('.controls-Scroll');
+   var SHADOW_CLASS = {
+      both: 'controls-Scroll_shadow_both',
+      bottom: 'controls-Scroll_shadow_bottom',
+      top: 'controls-Scroll_shadow_top',
+   };
 
-   scrollContent.onscroll = function() {
-      var showTopShadow = scrollContent.scrollTop !== 0;
-      var showBottomShadow = (scrollContent.scrollTop + scrollContent.getBoundingClientRect().height) !== scrollContent.scrollHeight;
-      toggleTopShadow(showTopShadow);
-      toggleBottomShadow(showBottomShadow);
-   }
+   scrollContainer.onscroll = onscroll;
+   onscroll(null, scrollContainer);
 
-   function toggleTopShadow(show) {
-      shadow_top.style.visibility = show ? 'visible' : 'hidden';
-   }
+   function onscroll(e, element) {
+      var el = e ? e.target : element;
+      var showTopShadow = el.scrollTop > 0;
+      var showBottomShadow = (el.scrollTop + el.getBoundingClientRect().height) < el.scrollHeight;
+      var removingClasses = [SHADOW_CLASS.top, SHADOW_CLASS.bottom, SHADOW_CLASS.both];
 
-   function toggleBottomShadow(show) {
-      shadow_bottom.style.visibility = show ? 'visible' : 'hidden';
+      if (!showTopShadow && !showBottomShadow) {
+         return;
+      }
+
+      var addingClass = showTopShadow && showBottomShadow
+         ? removingClasses.splice(2, 1)
+         : showTopShadow
+            ? removingClasses.splice(0, 1)
+            : removingClasses.splice(1, 1);
+
+      el.classList.add(addingClass[0]);
+      el.classList.remove.apply(el.classList, removingClasses);
    }
 })()
