@@ -23,8 +23,6 @@
        box-sizing: border-box;
   padding: 44px 70px 24px;
   bottom: 0;
-  min-width: 0;
-  max-width: 100%;
 }
 .UpdateNews__image {
   margin-top: 44px;
@@ -33,12 +31,11 @@
   flex-shrink: 0;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 200%;
+  background-size: cover;
 }
 .UpdateNews__content {
   margin-left: 32px;
   max-width: 706px;
-  min-width: 1px;
 }
 .UpdateNews__content-header {
   padding-bottom: 12px;
