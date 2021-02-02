@@ -1,14 +1,14 @@
-.controls-Scroll__userContent {
+.controls-Scroll {
     overflow-wrap: break-word;
     word-break: break-word;
 }
 
 /* Решение проблемы с переносами строк*/
-.controls-Scroll__userContent pre {
+.controls-Scroll pre {
     white-space: pre-wrap;
 }
 
-.controls-Scroll__userContent p {
+.controls-Scroll p {
     margin: 6px 0px 18px;
 }
 
@@ -46,21 +46,21 @@ blockquote:after {
 }
 
 /* Copy from RichEditor\_base\Viewer\_Viewer.less */
-.controls-Scroll__userContent .titleText {
+.controls-Scroll .titleText {
     font-size: 137.5%;
     line-height: 129%;
     color: #313E78;
     font-weight: bold;
 }
 
-.controls-Scroll__userContent .subTitleText {
+.controls-Scroll .subTitleText {
     font-size: 112.5%;
     line-height: 129%;
     color: #313E78;
     font-weight: bold;
 }
 
-.controls-Scroll__userContent .additionalText {
+.controls-Scroll .additionalText {
     font-size: 87.5%;
     line-height: 129%;
     color: #999999;
