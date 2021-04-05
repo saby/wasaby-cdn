@@ -20,7 +20,7 @@ function autoReload(minTimeout, maxTimeout) {
       setTimeout(reload, reloadTimeout);
 
       setInterval(function onTick() {
-         if (Date.now() >= reloadTime) {
+         if (!document.hidden && Date.now() >= reloadTime) {
             reload();
          }
       }, 1260);
