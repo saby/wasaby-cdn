@@ -8,13 +8,9 @@ function autoReload(minTimeout, maxTimeout) {
       var start = Date.now();
       var reloadTimeout = minTimeout * MINUTES + Math.round(Math.random() * (maxTimeout - minTimeout) * MINUTES);
       var reloadTime = start + reloadTimeout;
-      var reloaded = false;
 
       function reload() {
-         if (!reloaded) {
-            reloaded = true;
-            window.location.reload();
-         }
+         window.location.reload();
       }
 
       setTimeout(reload, reloadTimeout);
