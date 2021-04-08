@@ -64,7 +64,6 @@
 }
 .SbisEnv-ParkingBody__message {
   font-size: 14px;
-  height: 32px;
   margin: 12px auto 0;
   padding-left: 12px;
   padding-right: 12px;
@@ -107,7 +106,6 @@
 .SbisEnv-ParkingBody__action a {
   font-size: 12px;
   cursor: pointer;
-  line-height: 18px;
   text-align: center;
   text-decoration: none;
   color: #0055BB;
@@ -135,5 +133,5 @@
   min-height: 0px;
 }
 .SbisEnv-Parking__size_large .SbisEnv-ParkingBody__footer {
-  min-height: 32px;
+  min-height: 12px;
 }
