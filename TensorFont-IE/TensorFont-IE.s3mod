@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module for_cdn="1" id="60eab040-41dd-42ed-907d-1efa033282dd" name="TensorFont-IE" package="Wasaby" responsible="Губин П.А." responsible_uuid="aa838224-33cd-46ef-ae12-daacb0dc7041" kaizen_zone="eb394373-a8ed-4766-872d-8d931b215e0a"  version="1.00">
+
+  <description>TensorFont для IE</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>
