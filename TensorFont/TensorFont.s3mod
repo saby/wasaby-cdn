@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module for_cdn="1" id="cf6f5767-7fa3-4d2d-b360-9e56af200aea" name="TensorFont" package="Wasaby" 
+responsible="Клепиков И.А." responsible_uuid="c32fb8cd-d9d3-4d45-8a8c-3877a66e6d74"
+kaizen_zone="5752c01f-5d9e-4571-b177-c91638b31112"
+version="1.00">
+
+  <description>TensorFont</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>
