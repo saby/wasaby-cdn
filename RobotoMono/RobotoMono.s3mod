@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module for_cdn="1" id="38f2cd63-220c-4976-9044-73adfaba06c0" name="RobotoMono" package="Wasaby" responsible="Поздняков М.А." responsible_uuid="002e6ed6-db5b-4ec2-ba7b-a19508643a45" version="1.00">
+
+  <description>RobotoMono</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>
