@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module for_cdn="1" id="8755d022-a014-42a3-8023-fb90f98c0edc" kaizen_zone="066900c5-fd67-462b-9adf-be14e691556b" package="Wasaby" name="Codemirror" responsible="Башмаков И.Н." responsible_uuid="664c3a63-923b-464f-89fb-74e4a1c51a44" version="1.00">
+
+  <description>Библиотека Codemirror</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>
