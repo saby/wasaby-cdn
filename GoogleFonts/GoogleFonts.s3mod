@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ui_module for_cdn="1" name="GoogleFonts" id="60d3c82a-eb0a-4e87-aeac-8fd3e97489aa" package="Wasaby" kaizen_zone="1978bb1d-d8d5-4f65-bea9-d4dfda48f5c5" responsible="Орехов А.С." responsible_uuid="abedc507-370a-49ee-a86f-4aad468800c5">
+  <depends/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>
