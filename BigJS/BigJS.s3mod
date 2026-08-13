@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module
+        for_cdn="1"
+        id="2f620238-0e6d-4a05-87c8-9b8694810bc5"
+        package="Wasaby"
+        name="BigJS"
+        responsible="Мячиков Т.С."
+        responsible_uuid="53528365-352e-4da1-a765-fe7ac7066adc"
+        kaizen_zone="799149ef-49c0-4bb5-9744-d14e65aa78c8"
+        version="1.00">
+
+  <description>Big.JS</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>
