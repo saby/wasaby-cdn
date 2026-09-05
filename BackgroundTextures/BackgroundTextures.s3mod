@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="BackgroundTextures"
+           for_cdn="1"
+           id="7f3e8a9c-4b1d-4e5f-8a9b-0c1d2e3f4a5b"
+           kaizen_zone="cceedd7d-b4bf-4928-8262-3bde6e406e33"
+           package="Wasaby"
+           required="0"
+           responsible="Забаев М.П."
+           responsible_uuid="1e41b7f7-784f-4696-8643-3e65e5e48314"
+           version="1.01"
+>
+
+  <description>Статика для компонента выбора фона</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+</ui_module>
