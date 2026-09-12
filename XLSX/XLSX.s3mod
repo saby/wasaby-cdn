@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ui_module autodoc="0" for_cdn="1" id="110f25b7-8e80-47cf-9a03-076d3df85bc4" kaizen_zone="a691f590-ec1d-4f3b-bf30-d57d5da6927f" name="XLSX" package="Wasaby" required="0" responsible="Витковская К.В." responsible_uuid="902970aa-2a7b-4677-bcb9-b2aaa044bb0b" version="0.20.3">
+
+    <description>Экспорт и парсинг xlsx, ods и других электронных таблиц на стороне фронтенда</description>
+
+    <depends/>
+
+    <load_after/>
+
+    <parameters/>
+
+    <resources/>
+
+    <preload/>
+</ui_module>
