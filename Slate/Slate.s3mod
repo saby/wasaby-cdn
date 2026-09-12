@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module for_cdn="1"
+            id="7d9f1a70-907f-4596-a4bd-018c6f56d615"
+            package="Document builder"
+            name="Slate"
+            responsible="Красильников А.С."
+            responsible_uuid="e1022e40-af0c-4587-a8e9-56155071856e"
+            version="1.00"
+            kaizen_zone="7dc5152f-4b7f-407c-9eeb-f63ccbeb2d0c">
+
+  <description>Библиотека Slate</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

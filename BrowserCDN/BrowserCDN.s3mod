@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ui_module for_cdn="1" name="BrowserCDN" id="31daa3c4-d19c-4cca-ba55-03aa65df4c87" kaizen_zone="60bb379e-69be-41c7-a2c8-09c65d114897" responsible="Корнев А.А." responsible_uuid="fdb7d833-db62-4bac-a951-8b26c42d3ef4">
+  <depends/>
+  <typescript>
+    <arg key="typecheck" value="1"/>
+  </typescript>
+</ui_module>
