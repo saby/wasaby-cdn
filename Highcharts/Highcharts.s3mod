@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module for_cdn="1"
+            id="70fd296c-ed07-4fe5-9393-f8fdc9fc7df3"
+            package="Wasaby"
+            name="Highcharts"
+            responsible_uuid="e33dab13-80fa-415f-930c-ebe5ad08ae31"
+            version="1.00"
+            kaizen_zone="fd9fa20b-49b9-4974-9a76-1fecd10b7259">
+
+  <description>Библиотека Highcharts</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>
