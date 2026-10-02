@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module for_cdn="1" id="6b37add7-3560-46f0-b5d8-1566166ee3e8" kaizen_zone="6c2c3a3e-9f32-4e3f-a2ed-d6042ebaaf7c" name="Maintenance" package="Wasaby" required="0" responsible="Корнев А.А." responsible_uuid="fdb7d833-db62-4bac-a951-8b26c42d3ef4" version="1.00">
+
+  <description/>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>
