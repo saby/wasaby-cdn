@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module autodoc="0" for_cdn="1" id="d081d98b-33e6-474e-bf2d-a37559bb7adc" name="ClsxLibrary" package="Wasaby" required="0" kaizen_zone="60bb379e-69be-41c7-a2c8-09c65d114897" responsible="Корнев А.А." responsible_uuid="fdb7d833-db62-4bac-a951-8b26c42d3ef4" version="1.00">
+
+  <description>Модуль, содержащий в себе клон сторонней библиотеки clsx</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+</ui_module>
