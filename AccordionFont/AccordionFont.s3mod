@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module for_cdn="1" id="658a9cce-31ba-4cfe-ac20-eca0e01efc39" name="AccordionFont" package="Wasaby" 
+  responsible="Клепиков И.А." responsible_uuid="c32fb8cd-d9d3-4d45-8a8c-3877a66e6d74"
+  kaizen_zone="2c93852f-1e71-43aa-94f8-91bb35aa067a" version="1.00">
+
+  <description>AccordionFont</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

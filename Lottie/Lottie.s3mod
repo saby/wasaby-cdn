@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module
+        for_cdn="1"
+        id="04954192-3bfa-4b55-918a-479f704957cb"
+        package="Wasaby"
+        name="Lottie"
+        responsible="Мочалов М.А."
+        responsible_uuid="5bf5b206-a664-422b-b5e2-41217142717a"
+        kaizen_zone="9f7e4829-fcdd-437e-b4c2-85343c02e891"
+        version="1.00">
+
+  <description>Библиотека для проигрывания Lottie-анимаций</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>
