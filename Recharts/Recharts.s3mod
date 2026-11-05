@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module autodoc="0" for_cdn="1" id="23fbcd2c-ede9-4f4b-b90f-0b1dfa863fdb" kaizen_zone="b5d0fb3d-e509-4bc9-a0a0-2654fce5745d" name="Recharts" package="Wasaby" required="0" responsible="Максимов Д.А." responsible_uuid="714dce5a-eb77-47d3-88e0-6684cee7d641" version="1.07">
+
+  <description>Построение SVG графиков на сервере на промо сайте SabyProfile. В перспективе может использоваться как замена Highcharts</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+</ui_module>
