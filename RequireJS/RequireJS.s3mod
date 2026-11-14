@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module for_cdn="1" id="60e42987-4d2c-4455-a254-97257c2314d6" package="Wasaby" name="RequireJS" kaizen_zone="5017257c-1747-4764-aaf4-b5a7bfa8014e" responsible="Колбешин Ф.А." responsible_uuid="a433a212-4d92-4900-bc18-dca37052b171" version="1.00">
+
+  <description>Библиотека RequireJS</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>
