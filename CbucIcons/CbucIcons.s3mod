@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module for_cdn="1" id="d122870a-8b0a-44f9-aeeb-3986418dcf2a" name="CbucIcons" package="Wasaby" kaizen_zone="14859725-2714-49cc-8601-284977d3ba81" responsible="Михайлов С.Е." responsible_uuid="7d931920-ff90-48ff-96f6-636a5617869d" version="1.00">
+
+  <description>CbucIcons</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>
