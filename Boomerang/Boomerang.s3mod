@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module autodoc="0" for_cdn="1" id="73faafcb-60e4-4566-a66a-f6ab906f06b7" kaizen_zone="7c01ba80-5949-4d1e-a373-3195f20f9bee" name="Boomerang" package="Wasaby" required="0" responsible="Черцов С.Н." responsible_uuid="78f77390-9ccb-43fb-9dc7-11511ed7f954" version="1.08">
+
+  <description>Boomerang</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+
+  <resources/>
+
+  <preload/>
+
+</ui_module>
