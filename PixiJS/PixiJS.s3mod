@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module autodoc="0" for_cdn="1" id="9ab542fc-874c-4812-873f-6ab6d9514e85" kaizen_zone="4df6c0ad-3936-47e0-a735-bb0e36a7b8eb" name="PixiJS" package="Wasaby" required="0" responsible="Сухоручкин А.С." responsible_uuid="d15d1ebf-4838-4b18-80f6-66b5de73e561" version="1.07">
+
+  <description>Библиотека используется для рисования графики на canvas. Используется для отрисовки гонок и схем(досок)</description>
+
+  <depends/>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+</ui_module>
